@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>scina</groupId>
+  <artifactId>charHelper</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <properties>
+   <maven.compiler.source>1.8</maven.compiler.source>
+   <maven.compiler.target>1.8</maven.compiler.target>
+ </properties>
+ 
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+	<dependency>
+    	<groupId>org.openjfx</groupId>
+    	<artifactId>javafx-controls</artifactId>
+    	<version>16-ea+1</version>
+	</dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+    <!-- Build an executable JAR -->
+	  <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-jar-plugin</artifactId>
+	      <version>3.1.0</version>
+	      <configuration>
+	        <archive>
+	          <manifest>
+	            <addClasspath>true</addClasspath>
+	            <classpathPrefix>lib/</classpathPrefix>
+	            <mainClass>charHelper.CharHelper</mainClass>
+	          </manifest>
+	        </archive>
+	      </configuration>
+	    </plugin>
+	    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>charHelper.CharHelper</mainClass>
+            </manifest>
+              <manifestEntries>
+                    <Class-Path>.</Class-Path>
+                </manifestEntries>
+          </archive>
+        </configuration>
+     	 </plugin>
+	    <plugin>
+	        <groupId>org.openjfx</groupId>
+	        <artifactId>javafx-maven-plugin</artifactId>
+	        <version>0.0.1</version>
+	        <configuration>
+	            <mainClass>charHelper.CharHelper</mainClass>
+	        </configuration>
+	    </plugin>
+	  </plugins>
+  </build>
+</project>
